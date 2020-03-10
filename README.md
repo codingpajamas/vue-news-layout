@@ -1,4 +1,4 @@
-# clitest
+# Vue News Layout
 
 ## Project setup
 ```
