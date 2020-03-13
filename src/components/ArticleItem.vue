@@ -25,13 +25,10 @@ export default {
     'article'
   ],
 
-  data() {
-    return {
-
-    }
-  }, 
-
   methods: { 
+    /*
+    * Helper function to convert date to readable date format 
+    */ 
     readableDate(publishDate) {
       let months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

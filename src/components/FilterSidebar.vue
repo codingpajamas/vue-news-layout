@@ -47,18 +47,30 @@ export default {
   },
 
   mounted() {
+    // initialize fetching sources
     this.fetchSources();
   },
 
   methods: {
+    /*
+    * Delay initializing search while the user is typing keywords
+    */ 
     changedKeywords() {
       clearTimeout(this.typingTimer);
-      this.typingTimer = setTimeout(()=>this.applyNewKeywords(), this.typingWait); 
+      this.typingTimer = setTimeout(() => this.applyNewKeywords(), this.typingWait); 
     },
+
+    /*
+    * When user stops typing and wait-time is over,
+    * emit an event and pass the new search keywords to listener
+    */ 
     applyNewKeywords() {
-      // emit a search trigger
       this.$root.$emit('keywordsUpdated', this.strKeywords)
     },
+
+    /*
+    * Fetch sources from the server
+    */ 
     fetchSources() {
       this.isLoading = true;
 
@@ -68,6 +80,10 @@ export default {
           this.isLoading = false;
         })
     },
+
+    /*
+    * When user selects a source, emit an event and pass the new source to listener
+    */ 
     selectSource(sourceId) { 
       // if the clicked source is already the current source,
       // remove it to reset the source filter to ALL source

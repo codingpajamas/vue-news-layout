@@ -68,14 +68,19 @@ export default {
   },
 
   mounted() {
+    // initialize fetching articles
     this.fetchArticles();
 
+    // when user search, capture the keywords and update filter
+    // and re-fetch articles from the server with updated filter
     this.$root.$on('keywordsUpdated', (strKeywords) => { 
         this.filters.q = strKeywords;
         this.filters.pageNum = 1;
         this.fetchArticles();
     });
 
+    // when user selects source, capture the source and update filter
+    // and re-fetch articles from the server with updated filter
     this.$root.$on('sourceUpdated', (strSource) => { 
         this.filters.sources = strSource;
         this.filters.pageNum = 1;
@@ -84,6 +89,9 @@ export default {
   },
 
   methods: {
+    /*
+    * Fetch articles from the server
+    */ 
     fetchArticles() {
       this.isLoading = true;
 
@@ -102,6 +110,10 @@ export default {
         })
     },
 
+    /*
+    * When page was clicked, update page filter 
+    * and re-fetch articles from the server with updated filter
+    */ 
     changePage(pageNum) {
       this.filters.pageNum = pageNum;
       this.fetchArticles();
