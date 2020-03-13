@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
+import Paginate from 'vuejs-paginate'
+
+Vue.component('paginate', Paginate)
 Vue.config.productionTip = false
 
 new Vue({
