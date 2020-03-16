@@ -7,7 +7,7 @@
             <div class="p-5 text-center"> 
               <img src="./assets/newspaper.png" class="d-inline-block align-top" width="30" height="30" alt="">
               <p class="m-0">NEWSONLINE</p> 
-              <p class="m-0 text-muted"><small>or offline - PWA enabled</small></p>
+              <p class="m-0 text-muted"><small>or offline - PWA enabled (on https)</small></p>
             </div>
           </div>
         </div>
